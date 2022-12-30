@@ -61,7 +61,6 @@ public class StudentController {
             if(studentDb.get(i).getName().equals(name))
             {
                 student=studentDb.get(i);
-                break;
             }
         }
         return new ResponseEntity<>(student, HttpStatus.CREATED);
@@ -74,7 +73,6 @@ public class StudentController {
             if(teacherDb.get(i).getName().equals(name))
             {
                 teacher=teacherDb.get(i);
-                break;
             }
         }
         return new ResponseEntity<>(teacher, HttpStatus.CREATED);
@@ -103,7 +101,6 @@ public class StudentController {
             if(teacherDb.get(i).getName().equals(teacher))
             {
                 teacherDb.remove(i);
-                break;
             }
         }
         return new ResponseEntity<>(teacher + " removed successfully", HttpStatus.CREATED);
