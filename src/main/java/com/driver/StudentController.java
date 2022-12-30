@@ -29,12 +29,16 @@ public class StudentController {
 
     @PostMapping("/add-student")
     public ResponseEntity<String> addStudent(@RequestBody Student student){
+        if(studentDb.contains(student))
+           studentDb.remove(student);
         studentDb.add(student);
         return new ResponseEntity<>("New student added successfully", HttpStatus.CREATED);
     }
 
     @PostMapping("/add-teacher")
     public ResponseEntity<String> addTeacher(@RequestBody Teacher teacher){
+        if(teacherDb.contains(teacher))
+            teacherDb.remove(teacher);
         teacherDb.add(teacher);
         return new ResponseEntity<>("New teacher added successfully", HttpStatus.CREATED);
     }
